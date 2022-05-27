@@ -7,23 +7,26 @@
   font-family: "Rubik", sans-serif;
 }
 body .container {
-  width: 1200px;
+  width: 80%;
   display: flex;
   align-items: center;
   margin: auto;
+}
+.menu-opener{
+  display: none;
 }
 header {
   display: flex;
   /* justify-content: space-around; */
   background-color: #000000;
   width: 100%;
-  height: 100px;
+  height: 80px;
 }
 header .logo {
   flex: 2;
 }
 header .logo img {
-  width: 170px;
+  width: 140px;
 }
 header nav {
   color: #ffffff;
@@ -33,13 +36,17 @@ header nav ul {
   align-items: center;
 }
 header nav ul li {
-    margin-right: -5px;
-    margin-left: 46px;
+  margin: auto;
+  padding: 0px 13px;
+  cursor: pointer;
 }
 header nav ul li a {
   color: #ffffff;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 600;
+}
+header nav ul li a:hover{
+  color: #993399;
 }
 main {
 }
@@ -49,12 +56,15 @@ main #spotify-premium {
 }
 main #spotify-free {
   background-color: #2941ab;
+  background-image: url("/assets/images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 main #spotify-premium .container {
   align-items: initial;
 }
 main #spotify-premium .left-side h1 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -64,13 +74,13 @@ main #spotify-premium .left-side h1 {
 }
 main #spotify-premium .left-side .subtitle {
   margin: 10px 0px;
-  font-size: 75px;
+  font-size: 55px;
   font-weight: 600;
   letter-spacing: -2px;
   color: #ffffff;
 }
 main #spotify-premium .left-side .description {
-  font-size: 29px;
+  font-size: 25px;
   font-weight: 400;
   line-height: 44px;
   letter-spacing: 1px;
@@ -90,6 +100,12 @@ main #spotify-premium .left-side .conditions a {
 }
 main #spotify-premium .left-side .button {
   margin: 42px 0px;
+  border: 2px solid #993399;
+  border-radius: 33px;
+  width: 331px;
+}
+main #spotify-premium .left-side .button:hover {
+  border: 2px solid #000000;
 }
 main #spotify-premium .left-side .button button {
   background-color: #000000;
@@ -99,12 +115,157 @@ main #spotify-premium .left-side .button button {
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
+  border: 2px solid #993399;
 }
-
+main #spotify-premium .left-side .button button:hover {
+  border: 2px solid #993399;
+}
 main #spotify-premium .right-side {
   display: flex;
   align-items: center;
 }
 main #spotify-premium .right-side img {
-  width: 500px;
+  width: 100%;
+  margin-left: 2em;
+}
+
+main #spotify-free .container {
+  display: block;
+  padding-top: 100px;
+  padding-bottom: 74px;
+  align-items: initial;
+}
+main #spotify-free h1 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1ed760;
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
+main #spotify-free .subtitle {
+  margin: 10px 0px;
+  font-size: 55px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  color: #1ed760;
+}
+main #spotify-free .description {
+  width: 51%;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: 1px;
+  margin: 40px 0px;
+  color: #1ed760;
+}
+
+main #spotify-free .button {
+  margin: 42px 0px;
+  border: 2px solid #2941ab;
+  border-radius: 33px;
+  width: 331px;
+}
+main #spotify-free .button:hover {
+  border: 2px solid #1ed760;
+}
+main #spotify-free .button button {
+  background-color: #1ed760;
+  color: #2941ab;
+  padding: 18px 62px;
+  border-radius: 34px;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: 2px solid #1ed760;
+}
+main #spotify-free .button button:hover {
+  border: 2px solid #2941ab;
+}
+
+@media (max-width: 1000px) {
+  main {
+    text-align: center;
+  }
+  main #spotify-premium{
+    padding: 60px 0px;
+  }
+  main #spotify-premium .left-side .button{
+    margin: auto;
+  }
+  main #spotify-free .description{
+    margin: 40px 186px;
+  }
+  main #spotify-free .button{
+    margin: auto;
+  }
+  main #spotify-premium .right-side {
+    display: none;
+  }
+  main #spotify-premium .left-side .conditions{
+   margin: auto;
+   padding: 20px 0px;
+  }
+  header nav ul li a {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px){
+  header nav ul li {
+    margin: auto;
+    padding: 0px 7px;
+}
+main #spotify-free .description{
+  margin: 40px 24%;
+}
+}
+@media (max-width:740px){
+  .menu-opener {
+		display: block;
+		width: auto;
+		cursor: pointer;
+	}
+	.logoimg {
+		margin-left: 10px;
+	}
+	header nav ul {
+		display: none;
+    flex-direction: column;
+		position: absolute;
+		z-index: 99; /*camada a frente do position absolute*/
+		background-color: rgba(0, 0, 0, 0.9);
+		height: calc(60vh - 100px);
+		top: 80px;
+		right: 0; /*para colar a direita*/
+    left: 0;
+	}
+  header nav ul li a {
+    font-size: 1.1rem;
+}
+  .menu-opener{
+    display: block;
+  }
+  main #spotify-free .description, main #spotify-premium .left-side .description{
+    line-height:33px ;
+  }
+}
+
+@media (max-width:425px){
+  main #spotify-premium .left-side .subtitle, main #spotify-free .subtitle {
+    font-size: 40px;
+}
+  main #spotify-premium .left-side .button {
+    width: 267px;
+  }
+  main #spotify-premium .left-side .button button {
+    padding: 18px 6px;
+  }
+  
+  main #spotify-free .button {
+    width: 267px;
+  }
+  main #spotify-free .button button {
+    padding: 18px 30px;
+  }
 }
