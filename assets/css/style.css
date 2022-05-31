@@ -63,7 +63,7 @@ main #spotify-free {
 main #spotify-premium .container {
   align-items: initial;
 }
-main #spotify-premium .left-side h1 {
+main #spotify-premium .content h1 {
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 2px;
@@ -72,14 +72,14 @@ main #spotify-premium .left-side h1 {
   margin-top: 1%;
   margin-bottom: 5%;
 }
-main #spotify-premium .left-side .subtitle {
+main #spotify-premium .content .subtitle {
   margin: 10px 0px;
   font-size: 55px;
   font-weight: 600;
   letter-spacing: -2px;
   color: #ffffff;
 }
-main #spotify-premium .left-side .description {
+main #spotify-premium .content .description {
   font-size: 25px;
   font-weight: 400;
   line-height: 44px;
@@ -87,27 +87,18 @@ main #spotify-premium .left-side .description {
   margin: 40px 0px;
   color: #ffffff;
 }
-main #spotify-premium .left-side .conditions {
+main #spotify-premium .content .conditions {
   color: #ffffff;
   font-size: 14px;
   font-weight: 300;
   line-height: 19px;
   width: 75%;
 }
-main #spotify-premium .left-side .conditions a {
+main #spotify-premium .content .conditions a {
   color: #ffffff;
   text-decoration: underline;
 }
-main #spotify-premium .left-side .button {
-  margin: 42px 0px;
-  border: 2px solid #993399;
-  border-radius: 33px;
-  width: 331px;
-}
-main #spotify-premium .left-side .button:hover {
-  border: 2px solid #000000;
-}
-main #spotify-premium .left-side .button button {
+main #spotify-premium .content .button  {
   background-color: #000000;
   color: #ffffff;
   padding: 18px 38px;
@@ -115,16 +106,20 @@ main #spotify-premium .left-side .button button {
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
-  border: 2px solid #993399;
+  cursor: pointer;
 }
-main #spotify-premium .left-side .button button:hover {
-  border: 2px solid #993399;
+main #spotify-premium .content .button:hover {
+  border: 2px solid #000000;
+  opacity: 0.9;
 }
-main #spotify-premium .right-side {
+main .area-button{
+  margin: 10% 0px;
+}
+main #spotify-premium .image {
   display: flex;
   align-items: center;
 }
-main #spotify-premium .right-side img {
+main #spotify-premium .image img {
   width: 100%;
   margin-left: 2em;
 }
@@ -160,17 +155,7 @@ main #spotify-free .description {
   margin: 40px 0px;
   color: #1ed760;
 }
-
 main #spotify-free .button {
-  margin: 42px 0px;
-  border: 2px solid #2941ab;
-  border-radius: 33px;
-  width: 331px;
-}
-main #spotify-free .button:hover {
-  border: 2px solid #1ed760;
-}
-main #spotify-free .button button {
   background-color: #1ed760;
   color: #2941ab;
   padding: 18px 62px;
@@ -178,10 +163,11 @@ main #spotify-free .button button {
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
-  border: 2px solid #1ed760;
+  cursor: pointer;
 }
-main #spotify-free .button button:hover {
-  border: 2px solid #2941ab;
+main #spotify-free .button:hover{
+  border: 2px solid #1ed760;
+  opacity: 0.9;
 }
 
 @media (max-width: 1000px) {
@@ -191,7 +177,7 @@ main #spotify-free .button button:hover {
   main #spotify-premium{
     padding: 60px 0px;
   }
-  main #spotify-premium .left-side .button{
+  main #spotify-premium .content .button{
     margin: auto;
   }
   main #spotify-free .description{
@@ -200,10 +186,10 @@ main #spotify-free .button button:hover {
   main #spotify-free .button{
     margin: auto;
   }
-  main #spotify-premium .right-side {
+  main #spotify-premium .image {
     display: none;
   }
-  main #spotify-premium .left-side .conditions{
+  main #spotify-premium .content .conditions{
    margin: auto;
    padding: 20px 0px;
   }
@@ -246,26 +232,27 @@ main #spotify-free .description{
   .menu-opener{
     display: block;
   }
-  main #spotify-free .description, main #spotify-premium .left-side .description{
+  main #spotify-free .description, main #spotify-premium .content .description{
     line-height:33px ;
   }
 }
 
 @media (max-width:425px){
-  main #spotify-premium .left-side .subtitle, main #spotify-free .subtitle {
+  main #spotify-premium .content .subtitle, main #spotify-free .subtitle {
     font-size: 40px;
 }
-  main #spotify-premium .left-side .button {
-    width: 267px;
-  }
-  main #spotify-premium .left-side .button button {
+  main #spotify-premium .content .button {
+    width: 255px;
+    display: inline-block;
     padding: 18px 6px;
+    font-size: 12px;
+  }
+
+  main #spotify-free .button {
+    width: 255px;
+    display: inline-block;
+    padding: 18px 6px;
+    font-size: 12px;
   }
   
-  main #spotify-free .button {
-    width: 267px;
-  }
-  main #spotify-free .button button {
-    padding: 18px 30px;
-  }
 }
